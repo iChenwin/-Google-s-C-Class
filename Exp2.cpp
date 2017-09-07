@@ -12,7 +12,7 @@ int main()
         if (!(std::cin >> input_var))
         {
             std::cout << "a non-numeric character" << std::endl;
-            //Çå¿Õ»º´æÇø£¬http://blog.sina.com.cn/s/blog_8d3652760100wl9r.html
+            //æ¸…ç©ºç¼“å­˜åŒºï¼Œhttp://blog.sina.com.cn/s/blog_8d3652760100wl9r.html
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<int>::max(), '\n');
             continue;
