@@ -1,1 +1,1 @@
-# -Google-s-C-Class
+# Google's C++ Class
