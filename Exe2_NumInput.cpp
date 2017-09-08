@@ -13,6 +13,7 @@ int main()
         {
             std::cout << "a non-numeric character" << std::endl;
             //清空缓存区，http://blog.sina.com.cn/s/blog_8d3652760100wl9r.html
+            //http://www.cplusplus.com/reference/limits/numeric_limits/
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<int>::max(), '\n');
             continue;
