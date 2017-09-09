@@ -1,6 +1,6 @@
 #include <iostream>
 
-//获取一个大于0的整数
+//获取一�?大于0的整�?
 unsigned int InputANumber()
 {
     unsigned int input_var = 0;
@@ -32,6 +32,17 @@ int main()
     small = InputANumber();
     std::cout << "Enter another number(>0):";
     large = InputANumber();
+
+    // A non-recursive version of Euclid's algorithm, 非递归版欧几里得算法实现
+    // int gcd (int a, int b) {
+    //     int temp;
+    //     while (b != 0) {
+    //       temp = a % b;
+    //       a = b;
+    //       b = temp;
+    //     }
+    //     return(a);
+    //   }
 
     if (small > large)
     {

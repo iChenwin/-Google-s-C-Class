@@ -49,6 +49,17 @@ int GreatestCommonDivisor(unsigned int small, unsigned int large) {
     GreatestCommonDivisor(small, large);
 }
 
+// A non-recursive version of Euclid's algorithm, 非递归版欧几里得算法实现
+// int gcd (int a, int b) {
+//     int temp;
+//     while (b != 0) {
+//       temp = a % b;
+//       a = b;
+//       b = temp;
+//     }
+//     return(a);
+//   }
+
 int main()
 {
     unsigned int small = 0, large = 0, gcd = 1;
