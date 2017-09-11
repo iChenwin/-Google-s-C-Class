@@ -14,5 +14,16 @@ int main()
 
     std::ofstream People(file_name, std::ios::out);
 
-    People << first_name << std::endl << last_name << std::endl << age << std::endl; return 0;
+    People << first_name << std::endl << last_name << std::endl << age << std::endl; 
+    
+    std::ifstream Info(file_name, std::ios::in);
+    char firstName[30], lastName[30];
+    char ageOf[10];
+    Info.getline(firstName, 100);
+    Info.getline(lastName, 100);
+    Info.getline(ageOf, 100);
+
+    std::cout << firstName << std::endl << lastName << std::endl << ageOf << std::endl;
+    
+    return 0;
 }
