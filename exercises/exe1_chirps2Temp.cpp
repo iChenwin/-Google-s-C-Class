@@ -11,8 +11,7 @@ int Input()
         if (std::cin >> inputValue)
             break;
 
-        std::cout << "Number only!" << std::endl;
-        std::cout << "retry:";
+        std::cout << "Number only!" << std::cout << "retry:";
 
         std::cin.clear();
         std::cin.ignore(10000, '\n');
