@@ -1,3 +1,5 @@
+// Description: Illustrate the use of cin to get input.
+
 #include <iostream>
 
 int Input(char *s)

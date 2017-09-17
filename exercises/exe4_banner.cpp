@@ -1,3 +1,5 @@
+// Description: Guess a secret number game
+
 #include <iostream>
 
 using namespace std;
