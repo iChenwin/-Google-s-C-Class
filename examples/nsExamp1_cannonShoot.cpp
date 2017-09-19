@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 int StartUp(void) {
     std::cout << "Welcome to Artillery.\n\
@@ -21,9 +22,37 @@ int randomNum(void)
     return randomNum;
 }
 
+float InputAngle(void)
+{
+    float angle;
+
+    do
+    {
+        if (!(std::cin >> angle))
+        {
+            std::cout << "Number only! retry: ";
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            continue;
+        }
+
+        break;
+    } while (1);
+
+    return angle;
+}
+
 float FireDistance(float angle)
 {
-    return 0;
+
+    float Velocity = 200.0; // initial velocity of 200 ft/sec
+    float Gravity = 32.2; // gravity for distance calculation
+
+    // in_angle is the angle the player has entered, converted to radians.
+    float time_in_air = (2.0 * Velocity * sin(angle)) / Gravity;
+    float distance = round((Velocity * cos(angle)) * time_in_air);
+
+    return distance;
 }
 
 int Fire()
@@ -32,7 +61,32 @@ int Fire()
     std::cout << "The enemy is " << distance << " feet away!!!" << std::endl;
     std::cout << "What angle? ";
 
-    return 0;
+    float angle = InputAngle();
+    
+    float fireDistance = FireDistance(angle);
+
+    int i = 0;
+    while (fireDistance != distance && i < 9)
+    {
+        if (fireDistance > distance)
+            std::cout << "You over shot by " << fireDistance - distance << std::endl;
+        else
+            std::cout << "You under shot by " << distance - fireDistance << std::endl;
+
+        std::cout << "What angle? ";
+        angle = InputAngle();
+        fireDistance = FireDistance(angle);
+
+        i++;
+    }
+
+    if (i == 9)
+    {
+        std::cout << "enemy arrived!" << std::endl;
+        return 0;
+    }
+
+    return 1;
 
 }
 
@@ -43,6 +97,7 @@ int main(void)
     char done;
     do {
         killed = Fire();
+        std::cout << "You have killed " << killed << " enemy." << std::endl;
         std::cout << "I see another one, care to shoot again? (Y/N) " << std::endl;
         std::cin >> done;
     } while (done != 'n');
