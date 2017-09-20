@@ -26,6 +26,23 @@ void Time::increment() {
   return;
 }
 
+// Google official solution
+// void Time::decrement (void) {
+//     seconds_--;
+//     if (seconds_ < 0) {
+//       seconds_ += 60;
+//       minutes_--;
+//     }
+//     if (minutes_ < 0) {
+//       minutes_ += 60;
+//       hours_--;
+//     }
+//     if (hours_ < 0) {
+//       hours_ += 24;
+//     }
+//     return;
+// }
+
 void Time::decrement() {
     if (0 == seconds_) {
         seconds_ = 59;
